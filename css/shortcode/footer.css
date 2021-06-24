@@ -1,0 +1,182 @@
+/*-----------------------------------------------------------------------------------
+  Template Name: Best Care HTML Template.
+  Template URI: #
+  Description: Best Care is a unique website template designed in HTML with a simple & beautiful look. There is an excellent solution for creating clean, wonderful and trending material design corporate, corporate any other purposes websites.
+  Author: HasTech
+  Author URI: https://themeforest.net/user/hastech/portfolio
+  Version: 1.0
+-------------------------------------------------------------------------------------*/
+/*
+
+
+    font-family: 'Lato', sans-serif;
+
+    font-family: 'Vollkorn', serif;
+
+
+*/
+/*-----------------------------
+	Footer Default
+------------------------------*/
+
+
+.single__form input[type="text"],
+.single__form input[type="email"],
+.single__form input[type="password"] {
+  background: #f1f1f1 none repeat scroll 0 0;
+  border: 0 none;
+  height: 45px;
+  padding: 0 20px;
+  width: 100%;
+  color: #909090;
+  font-family: Lato;
+}
+
+.single__form input::-moz-placeholder {
+  color: #909090 !important;
+}
+
+
+
+
+.footer__input input::-moz-placeholder {
+  color: #767676 !important;
+}
+
+
+.footer-title {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    position: relative;
+    text-transform: capitalize;
+}
+.footer-title::before {
+    background: #fff none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    width: 70px;
+}
+.single__footer__address {
+    display: flex;
+}
+.footer__icon i {
+    border: 1px solid #bdbdbd;
+    color: #fff;
+    font-size: 18px;
+    height: 32px;
+    line-height: 29px;
+    text-align: center;
+    width: 32px;
+}
+.footer__icon {
+    margin-right: 14px;
+    padding-top: 9px;
+}
+.footer__address p {
+    color: #f7f7f7;
+    font-size: 16px;
+}
+.footer__address p a {
+    color: #f7f7f7;
+}
+.single__footer__address + .single__footer__address {
+    margin-top: 35px;
+}
+.footer-menu li a {
+    color: #f7f7f7;
+    font-size: 16px;
+}
+.footer-menu li a i {
+    color: #909090;
+    font-size: 18px;
+    padding-right: 22px;
+}
+.footer-menu li + li {
+    padding: 8px 0;
+}
+.footer-menu li:first-child {
+    padding-bottom: 8px;
+}
+.newsletter__area p {
+    color: #f7f7f7;
+    font-size: 16px;
+}
+.footer__input {
+    margin-top: 23px;
+}
+.footer__input input {
+  background: #353535 none repeat scroll 0 0;
+  border: 1px solid #353535;
+  color: #fff;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.footer__input input::-moz-placeholder {
+  color: #fff !important;
+}
+.subscribe__btn {
+    margin-top: 25px;
+}
+.ft__btm__social__icon {
+  display: flex;
+}
+
+.footer__bottom {
+    align-items: center;
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+}
+.ft__btm__inner p {
+    color: #fff;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+.ft__btm__inner p a {
+    color: #fff;
+    font-weight: 700;
+    padding: 0 6px;
+}
+.ft__btm__social__icon li a i {
+    color: #fff;
+    font-size: 18px;
+    transition: 0.3s;
+}
+.ft__btm__social__icon li a:hover i {
+    color: #6bc614;
+}
+.ft__btm__social__icon li + li {
+    padding-left: 30px;
+}
+
+
+
+.footer-menu li a:hover,
+.footer__address p a:hover,
+.ft__btm__inner p a:hover{
+  color: #6bc614;
+}
+
+#mc_embed_signup .footer__input input:focus {
+  border: 1px solid #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+

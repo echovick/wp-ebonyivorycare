@@ -1,0 +1,297 @@
+/*-----------------------------------------------------------------------------------
+
+  Template Name: Best Care HTML Template.
+  Template URI: #
+  Description: Best Care is a unique website template designed in HTML with a simple & beautiful look. There is an excellent solution for creating clean, wonderful and trending material design corporate, corporate any other purposes websites.
+  Author: HasTech
+  Author URI: https://themeforest.net/user/hastech/portfolio
+  Version: 1.0
+-----------------------------------------------------------------------------------*/
+/*
+
+    font-family: 'Lato', sans-serif;
+
+    font-family: 'Vollkorn', serif;
+
+*/
+.slider-area > img {
+  height: 100vh !important;
+  width: 100%;
+}
+.slider__bg--1 {
+  background-image: url("../../images/slider/bg/1.jpg");
+}
+
+.slider__bg--2 {
+  background-image: url("../../images/slider/bg/2.jpg");
+}
+
+.slider__bg--3 {
+  background-image: url("../../images/slider/bg/3.jpg");
+}
+
+.slider__bg--4{
+    background-image: url("../../images/cdc-Vqt9v7v6g44-unsplash.jpg");
+}
+
+.slider__bg--1, 
+.slider__bg--2, 
+.slider__bg--3,
+.slider__bg--4{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+/*-----------------------------------------
+  Background variation Content
+-------------------------------------------*/
+.slider__full--width {
+    display: block;
+    height: 100vh;
+}
+.slider__activation__wrap {
+    height: 100%;
+}
+.slide {
+    align-items: center;
+    display: flex;
+    height: 100%;
+}
+
+.slider__inner {
+  position: relative;
+  z-index: 2;
+}
+.slider__inner h1 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+.slider__inner h1 span {
+    font-weight: 700;
+}
+.slider__inner p {
+    color: #fefefe;
+    font-size: 16px;
+    padding-right: 38%;
+}
+
+
+.slider__btn {
+    margin-top: 45px;
+}
+/*-------------------------------
+text__align--right
+----------------------------------*/
+.text__align--right .slider__inner h1,
+.text__align--right .slider__inner p,
+.text__align--right .slider__btn {
+  text-align: right;
+}
+.text__align--right .slider__inner p {
+  padding-left: 38%;
+  padding-right: 0;
+}
+/*-------------------------------
+text__align--center
+----------------------------------*/
+.text__align--center .slider__inner h1,
+.text__align--center .slider__inner p,
+.text__align--center .slider__btn {
+  text-align: center;
+}
+.text__align--center .slider__inner p {
+  padding: 0 15%;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*-----------------------------
+  Button Style
+-------------------------------*/
+.bst__btn {
+  border: 1px solid #fff;
+  color: #fff;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+  height: 45px;
+  line-height: 42px;
+  padding: 0 21px;
+  position: relative;
+  text-transform: uppercase;
+  transition: all 0.4s ease 0s;
+  z-index: 2;
+}
+.bst__btn.btn--large {
+    padding: 0 22px;
+}
+.bst__btn.btn--theme__color {
+  border: 1px solid #6bc614;
+  color: #6bc614;
+}
+
+
+/*-------------------------
+  Hover
+---------------------------*/
+.bst__btn::after {
+  background: #fff none repeat scroll 0 0;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 0;
+}
+.bst__btn.btn--theme__color::after {
+  background: #6bc614 none repeat scroll 0 0;
+}
+.bst__btn.hover--gray::after {
+  background: #f1f1f1 none repeat scroll 0 0;
+}
+.bst__btn::after {
+  content: "";
+  position: absolute;
+  transition: all 0.4s ease 0s;
+  z-index: -1;
+}
+.bst__btn:hover::after,
+.bst__btn:active::after {
+  width: 100%;
+}
+.bst__btn.btn--theme__color:hover{
+  color: #fff;
+}
+
+
+
+
+
+/*----------------------
+  Animation
+-------------------------*/
+
+.slider__container .slider__inner h3,
+.slider__container .slider__inner .slider__btn,
+.slider__container .slider__inner p,
+.slider__container .slider__inner h1 {
+  opacity: 0;
+  transform: translateX(20%);
+}
+
+/*------------text__align--right-------------*/
+.slider__container .text__align--right .slider__inner h3,
+.slider__container .text__align--right .slider__inner .slider__btn,
+.slider__container .text__align--right .slider__inner p,
+.slider__container .text__align--right .slider__inner h1 {
+  transform: translateX(-20%);
+}
+
+/*-------- text__align--center ------------*/
+.slider__container .text__align--center .slider__inner h3,
+.slider__container .text__align--center .slider__inner .slider__btn,
+.slider__container .text__align--center .slider__inner p,
+.slider__container .text__align--center .slider__inner h1 {
+  transform: translateY(-20%);
+}
+.slider__container .control__style--left .owl-item.active .slider__inner h3,
+.slider__container .control__style--left .owl-item.active .slider__btn,
+.slider__container .control__style--left .owl-item.active .slider__inner p,
+.slider__container .control__style--left .owl-item.active .slider__inner h1 {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+/*------------- text__align--left -------------*/
+.slider__container .control__style--left .owl-item.active .slider__inner h3,
+.slider__container .control__style--left .owl-item.active .slider__btn,
+.slider__container .control__style--left .owl-item.active .slider__inner p,
+.slider__container .control__style--left .owl-item.active .slider__inner h1 {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+/*-------------- slider transition --------------*/
+.slider__container .slider__inner h3 {
+  transition: all 1s ease-in-out 1s;
+}
+.slider__container .slider__inner h1 {
+  transition: all 1s ease-in-out 1.2s;
+}
+.slider__container .slider__inner p {
+  transition: all 1s ease-in-out 1.4s;
+}
+.slider__container .slider__inner .slider__btn {
+  transition: all 1s ease-in-out 2s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------------
+ Slider Dots style 
+-------------------------------*/
+
+
+.slider-activetion-wrap, 
+.slider-activetion-wrap .owl-stage-outer, 
+.slider-activetion-wrap .owl-item, 
+.slider-activetion-wrap .slide, 
+.slider-activetion-wrap .owl-stage {
+  height: 100%;
+}
+
+.slider__activation__wrap .owl-nav div {
+  color: #fff;
+  font-size: 30px;
+  left: 100px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-bottom: 10px;
+  transition: 0.3s;
+}
+.slider__activation__wrap .owl-nav div::before {
+  border-bottom: 1px solid transparent;
+  bottom: 0;
+  content: "";
+  height: 1px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  transform: translateX(-32%);
+  width: 50px;
+  transition: 0.3s;
+}
+.slider__activation__wrap .owl-nav div.owl-next {
+  left: auto;
+  right: 100px;
+}
+
+.slider__activation__wrap .owl-nav div:hover,
+.slider__activation__wrap .owl-nav div:active,
+.slider__activation__wrap .owl-nav div:focus{
+  color: #6bc614;
+}
+.slider__activation__wrap .owl-nav div:hover::before,
+.slider__activation__wrap .owl-nav div:active::before,
+.slider__activation__wrap .owl-nav div:focus::before{
+  border-bottom: 1px solid #6bc614;
+}
+
+
