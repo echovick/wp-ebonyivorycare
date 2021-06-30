@@ -162,7 +162,7 @@
                                     <!-- <a class="video__trigger video-popup" href="https://www.youtube.com/watch?v=cDDWvj_q-o8">
                                         <i class="zmdi zmdi-play"></i>
                                     </a> -->
-                                    <img src="<?php echo get_theme_file_uri('/images/matheus-ferrero-yfmjALh1S6s-unsplash.jpg')?>" alt="">
+                                    <img src="<?php echo get_theme_file_uri('/images/WhatsApp Image 2021-06-29 at 11.56.54 AM.jpeg')?>" alt="">
                                 </div>
                             </div>
                         </div>
@@ -203,25 +203,25 @@
                                         <!-- Start Single -->
                                         <div class="single__bokking__box">
                                             <div class="appoinment__box">
-                                                <input type="text" placeholder="Your Name" required>
+                                                <input style="color:black;" type="text" placeholder="Your Name" required>
                                             </div>
                                             <div class="appoinment__box">
-                                                <input type="email" placeholder="Email Address" required>
+                                                <input style="color:black;" type="email" placeholder="Email Address" required>
                                             </div>
                                         </div>
                                         <!-- End Single -->
                                         <!-- Start Single -->
                                         <div class="single__bokking__box">
                                             <div class="appoinment__box">
-                                                <input type="text" placeholder="Phone Number" required>
+                                                <input style="color:black;" type="text" placeholder="Phone Number" required>
                                             </div>
                                             <div class="appoinment__box">
-                                                <input type="text" placeholder="Subject" required>
+                                                <input style="color:black;" type="text" placeholder="Subject" required>
                                             </div>
                                         </div>
                                         <div class="single__bokking__box">
                                             <div class="appoinment__box" style="width:100% !important;">
-                                                <textarea type="text" placeholder="Your Message" required></textarea>
+                                                <textarea style="color:black;" type="text" placeholder="Your Message" required></textarea>
                                             </div>
                                         </div>
                                         <!-- End Single -->
@@ -280,7 +280,7 @@
                             <div class="blog" style="border:1px solid gray; padding:5% 5% 5% 5%;">
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
-                                        <a href="#"><img src="<?php echo get_theme_file_uri('/images/blog/blog-img/2.jpg')?>" alt="blog images"></a>
+                                        <a href="#"><img src="<?php echo get_theme_file_uri('/images/WhatsApp Image 2021-06-29 at 12.20.58 PM.jpeg')?>" alt="blog images"></a>
                                     </div>
                                     <!-- Start Blog Hover -->
                                     <div class="blog__hover__info">
@@ -301,7 +301,7 @@
                             <div class="blog" style="border:1px solid gray; padding:5% 5% 5% 5%;">
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
-                                        <a href="<?php echo site_url('join-us')?>"><img src="<?php echo get_theme_file_uri('/images/blog/blog-img/3.jpg')?>" alt="blog images"></a>
+                                        <a href="<?php echo site_url('join-us')?>"><img src="<?php echo get_theme_file_uri('/images/blog/blog-img/2.jpg')?>" alt="blog images"></a>
                                     </div>
                                     <!-- Start Blog Hover -->
                                     <div class="blog__hover__info">

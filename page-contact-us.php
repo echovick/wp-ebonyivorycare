@@ -68,7 +68,7 @@
                                     <i class="zmdi zmdi-pin"></i>
                                 </div>
                                 <div class="ct__address__content">
-                                    <p>4 Imperial Place Maxwell Road, Borehamwood, Hertfordshire</p>
+                                    <p>Unit 20, 4 Imperial Place Maxwell Road, Borehamwood, Hertfordshire</p>
                                     <p>WD6 1JN, United Kingdom</p>
                                 </div>
                             </div>

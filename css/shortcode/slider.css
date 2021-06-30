@@ -21,6 +21,14 @@
 .slider__bg--1 {
   background-image: url("../../images/slider/bg/1.jpg");
 }
+@media screen and (max-width: 600px) {
+  .slider__bg--1 {
+    background-image: url("../../images/slider/bg/bg---1.jpg");
+  }   
+  .slider__bg--2 {
+    background-image: url("../../images/slider/bg/bg---2.jpg");
+  }
+}
 
 .slider__bg--2 {
   background-image: url("../../images/slider/bg/2.jpg");
