@@ -26,43 +26,45 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                         <div class="appoinment bg--5 ptb--70" data--black__overlay="8">
-                            <div class="appoinment__inner">
-                                <h2 class="appoinment__title">Fill Up Appointment Form</h2>
-                                <!-- Start Single -->
-                                <div class="single__bokking__box">
-                                    <div class="appoinment__box">
-                                        <input type="text" placeholder="Your Fast Name">
+                            <form action="#" method="POST">
+                                <div class="appoinment__inner">
+                                    <h2 class="appoinment__title">Fill Up Appointment Form</h2>
+                                    <!-- Start Single -->
+                                    <div class="single__bokking__box">
+                                        <div class="appoinment__box">
+                                            <input type="text" placeholder="Your Fast Name">
+                                        </div>
+                                        <div class="appoinment__box">
+                                            <input type="text" placeholder="Date">
+                                            <input type="text" placeholder="Time">
+                                        </div>
                                     </div>
-                                    <div class="appoinment__box">
-                                        <input type="text" placeholder="Date">
-                                        <input type="text" placeholder="Time">
+                                    <!-- End Single -->
+                                    <!-- Start Single -->
+                                    <div class="single__bokking__box">
+                                        <div class="appoinment__box">
+                                            <input type="text" placeholder="Your Last Name">
+                                        </div>
+                                        <div class="appoinment__box">
+                                            <input type="text" placeholder="Your Phone Number">
+                                        </div>
+                                    </div>
+                                    <!-- End Single -->
+                                    <!-- Start Single -->
+                                    <div class="single__bokking__box">
+                                        <div class="appoinment__box">
+                                            <input type="text" placeholder="Your Email">
+                                        </div>
+                                        <div class="appoinment__box">
+                                            <input type="text" placeholder="Address">
+                                        </div>
+                                    </div>
+                                    <!-- End Single -->
+                                    <div class="appoinment__btn">
+                                        <button class="bst__btn" name="sunmit_appointment">Appoinment</button>
                                     </div>
                                 </div>
-                                <!-- End Single -->
-                                <!-- Start Single -->
-                                <div class="single__bokking__box">
-                                    <div class="appoinment__box">
-                                        <input type="text" placeholder="Your Last Name">
-                                    </div>
-                                    <div class="appoinment__box">
-                                        <input type="text" placeholder="Your Phone Number">
-                                    </div>
-                                </div>
-                                <!-- End Single -->
-                                <!-- Start Single -->
-                                <div class="single__bokking__box">
-                                    <div class="appoinment__box">
-                                        <input type="text" placeholder="Your Email">
-                                    </div>
-                                    <div class="appoinment__box">
-                                        <input type="text" placeholder="Address">
-                                    </div>
-                                </div>
-                                <!-- End Single -->
-                                <div class="appoinment__btn">
-                                    <a class="bst__btn" href="#">Appoinment</a>
-                                </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -75,7 +77,8 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                         <ul class="brand__list bg-white">
-                            <li><a href="#"><img src="<?php echo get_theme_file_uri('/images/cqc.jpg')?>" alt="brand images"></a></li>
+                            <li><a href="#"><img src="<?php echo get_theme_file_uri('/images/cqc.jpg')?>" class="partner-logo" alt="brand images"></a></li>
+                            <li><a href="#"><img src="<?php echo get_theme_file_uri('/images/hcpa.jpeg')?>" class="partner-logo" alt="brand images"></a></li>
                         </ul>
                     </div>
                 </div>

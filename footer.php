@@ -53,11 +53,11 @@
                                 <div class="single__footer__widget our--links">
                                     <h2 class="footer-title">Quick links</h2>
                                     <ul class="footer-menu">
-                                        <li><a href="<?php echo get_theme_file_uri('/about')?>"><i
+                                        <li><a href="<?php echo site_url('/about')?>"><i
                                                     class="zmdi zmdi-caret-right"></i>About Us</a></li>
-                                        <li><a href="<?php echo get_theme_file_uri('/services')?>"><i
+                                        <li><a href="<?php echo site_url('/services')?>"><i
                                                     class="zmdi zmdi-caret-right"></i>Our Services</a></li>
-                                        <li><a href="<?php echo get_theme_file_uri('/join-us')?>"><i
+                                        <li><a href="<?php echo site_url('/join-us')?>"><i
                                                     class="zmdi zmdi-caret-right"></i>Join Us</a></li>
                                     </ul>
                                 </div>

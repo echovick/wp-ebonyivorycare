@@ -33,6 +33,15 @@
         }
     }
 
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
+    include_once('includes/processes.php');
+
     function theme_features(){
         add_theme_support('title-tag');
     }

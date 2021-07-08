@@ -177,7 +177,8 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                         <ul class="brand__list bg-white">
-                            <li><a href="#"><img src="<?php echo get_theme_file_uri('/images/cqc.jpg')?>" alt="brand images"></a></li>
+                            <li><a href="#"><img src="<?php echo get_theme_file_uri('/images/cqc.jpg')?>" class="partner-logo" alt="brand images"></a></li>
+                            <li><a href="#"><img src="<?php echo get_theme_file_uri('/images/hcpa.jpeg')?>" class="partner-logo" alt="brand images"></a></li>
                         </ul>
                     </div>
                 </div>

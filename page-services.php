@@ -179,25 +179,25 @@
                                                 <!-- Start Single -->
                                                 <div class="single__bokking__box">
                                                     <div class="appoinment__box">
-                                                        <input type="text" placeholder="Your Name" required>
+                                                        <input style="color:black;" type="text" placeholder="Your Name" required>
                                                     </div>
                                                     <div class="appoinment__box">
-                                                        <input type="email" placeholder="Email Address" required>
+                                                        <input style="color:black;" type="email" placeholder="Email Address" required>
                                                     </div>
                                                 </div>
                                                 <!-- End Single -->
                                                 <!-- Start Single -->
                                                 <div class="single__bokking__box">
                                                     <div class="appoinment__box">
-                                                        <input type="text" placeholder="Phone Number" required>
+                                                        <input style="color:black;" type="text" placeholder="Phone Number" required>
                                                     </div>
                                                     <div class="appoinment__box">
-                                                        <input type="text" placeholder="Subject" required>
+                                                        <input style="color:black;" type="text" placeholder="Subject" required>
                                                     </div>
                                                 </div>
                                                 <div class="single__bokking__box">
                                                     <div class="appoinment__box" style="width:100% !important;">
-                                                        <textarea type="text" placeholder="Your Message" required></textarea>
+                                                        <textarea style="color:black;" type="text" placeholder="Your Message" required></textarea>
                                                     </div>
                                                 </div>
                                                 <!-- End Single -->

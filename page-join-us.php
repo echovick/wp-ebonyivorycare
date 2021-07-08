@@ -136,37 +136,39 @@
                                         <div class="row">
                                             <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                                                 <div class="appoinment ptb--30">
-                                                    <div class="appoinment__inner">
-                                                        <!-- <p style="padding:0% 0% 3% 0%; font-size:15px;"><b>Please complete the following form below if you<b></p> -->
-                                                        <!-- Start Single -->
-                                                        <div class="single__bokking__box">
-                                                            <div class="appoinment__box">
-                                                                <input type="text" placeholder="Your Name" style="border:1px solid rgb(52, 190, 52);" required>
+                                                    <form action="#" method="POST">
+                                                        <div class="appoinment__inner">
+                                                            <!-- <p style="padding:0% 0% 3% 0%; font-size:15px;"><b>Please complete the following form below if you<b></p> -->
+                                                            <!-- Start Single -->
+                                                            <div class="single__bokking__box">
+                                                                <div class="appoinment__box">
+                                                                    <input style="color:black;" type="text" placeholder="Your Name" style="border:1px solid rgb(52, 190, 52);" required>
+                                                                </div>
+                                                                <div class="appoinment__box">
+                                                                    <input style="color:black;" type="email" placeholder="Email Address" style="border:1px solid rgb(52, 190, 52);" required>
+                                                                </div>
                                                             </div>
-                                                            <div class="appoinment__box">
-                                                                <input type="email" placeholder="Email Address" style="border:1px solid rgb(52, 190, 52);" required>
+                                                            <!-- End Single -->
+                                                            <!-- Start Single -->
+                                                            <div class="single__bokking__box">
+                                                                <div class="appoinment__box">
+                                                                    <input style="color:black;" type="text" placeholder="Phone Number" style="border:1px solid rgb(52, 190, 52);" required>
+                                                                </div>
+                                                                <div class="appoinment__box">
+                                                                    <input style="color:black;" type="text" placeholder="Role" style="border:1px solid rgb(52, 190, 52);" required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="single__bokking__box">
+                                                                <div class="appoinment__box" style="width:100% !important;">
+                                                                    <textarea type="text" placeholder="Message" style="background:transparent !important; color:black;" required></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <!-- End Single -->
+                                                            <div class="appoinment__btn">
+                                                                <button class="btn btn-success" href="#">Submit</button>
                                                             </div>
                                                         </div>
-                                                        <!-- End Single -->
-                                                        <!-- Start Single -->
-                                                        <div class="single__bokking__box">
-                                                            <div class="appoinment__box">
-                                                                <input type="text" placeholder="Phone Number" style="border:1px solid rgb(52, 190, 52);" required>
-                                                            </div>
-                                                            <div class="appoinment__box">
-                                                                <input type="text" placeholder="Role" style="border:1px solid rgb(52, 190, 52);" required>
-                                                            </div>
-                                                        </div>
-                                                        <div class="single__bokking__box">
-                                                            <div class="appoinment__box" style="width:100% !important;">
-                                                                <textarea type="text" placeholder="Message" style="background:transparent !important;" required></textarea>
-                                                            </div>
-                                                        </div>
-                                                        <!-- End Single -->
-                                                        <div class="appoinment__btn">
-                                                            <a class="btn btn-success" href="#">Submit</a>
-                                                        </div>
-                                                    </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
@@ -259,8 +261,8 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                         <ul class="brand__list bg-white">
-                            <li><a href="#"><img src="<?php echo get_theme_file_uri('/images/cqc.jpg')?>" alt="brand images"></a></li>
-                            <!-- <li class="hidden-md hidden-lg"><a href="#"><img src="<?php echo get_theme_file_uri('/images/brand/1.png')?>" alt="brand images"></a></li> -->
+                            <li><a href="#"><img src="<?php echo get_theme_file_uri('/images/cqc.jpg')?>" class="partner-logo" alt="brand images"></a></li>
+                            <li><a href="#"><img src="<?php echo get_theme_file_uri('/images/hcpa.jpeg')?>" class="partner-logo" alt="brand images"></a></li>
                         </ul>
                     </div>
                 </div>

@@ -110,25 +110,25 @@
                     <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                         <div class="contact-form-wrap bg-cat-3">
                             <h2 class="contact__title">Contact Us</h2>
-                            <form id="contact-form" action="" method="post">
+                            <form action="#" method="post">
                                 <div class="single-contact-form">
                                     <div class="contact-box">
-                                        <input type="text" name="name" placeholder="Your Name*">
-                                        <input type="email" name="email" placeholder="Your Email*">
+                                        <input type="text" name="full_name" placeholder="Your Name*">
+                                        <input type="email" name="email_address" placeholder="Your Email*">
                                     </div>
                                 </div>
                                 <div class="single-contact-form">
                                     <div class="contact-box subject">
-                                        <input type="text" name="subject" placeholder="Subject*">
+                                        <input type="text" name="email_subject" placeholder="Subject*">
                                     </div>
                                 </div>
                                 <div class="single-contact-form">
                                     <div class="contact-box message">
-                                        <textarea name="message"  placeholder="Message text"></textarea>
+                                        <textarea name="email_message" placeholder="Message text"></textarea>
                                     </div>
                                 </div>
                                 <div class="contact-btn">
-                                    <button type="submit" class="bst__btn btn--theme__color">SEND message</button>
+                                    <button type="submit" name="contact_us" class="bst__btn btn--theme__color">SEND message</button>
                                 </div>
                             </form>
                         </div>
@@ -151,7 +151,8 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                         <ul class="brand__list bg-white">
-                            <li><a href="#"><img src="<?php echo get_theme_file_uri('/images/cqc.jpg')?>" alt="brand images"></a></li>
+                            <li><a href="#"><img src="<?php echo get_theme_file_uri('/images/cqc.jpg')?>" class="partner-logo" alt="brand images"></a></li>
+                            <li><a href="#"><img src="<?php echo get_theme_file_uri('/images/hcpa.jpeg')?>" class="partner-logo" alt="brand images"></a></li>
                         </ul>
                     </div>
                 </div>

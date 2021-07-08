@@ -1675,6 +1675,12 @@ form#contact-form {
   height: 4px;
 }
 
+.partner-logo{
+  width:130px !important;
+  object-fit: cover !important;
+  height: auto;
+}
+
 .ui-widget.ui-widget-content.ui-state-focus {
 }
 

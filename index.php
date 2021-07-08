@@ -201,33 +201,35 @@
                                     <div class="appoinment__inner">
                                         <p style="padding:0% 0% 3% 0%; font-size:15px;"><b>Please complete the following form to schedule a FREE assessment<b></p>
                                         <!-- Start Single -->
-                                        <div class="single__bokking__box">
-                                            <div class="appoinment__box">
-                                                <input style="color:black;" type="text" placeholder="Your Name" required>
+                                        <form action="#" method="POST">
+                                            <div class="single__bokking__box">
+                                                <div class="appoinment__box">
+                                                    <input style="color:black;" type="text" placeholder="Your Name" required>
+                                                </div>
+                                                <div class="appoinment__box">
+                                                    <input style="color:black;" type="email" placeholder="Email Address" required>
+                                                </div>
                                             </div>
-                                            <div class="appoinment__box">
-                                                <input style="color:black;" type="email" placeholder="Email Address" required>
+                                            <!-- End Single -->
+                                            <!-- Start Single -->
+                                            <div class="single__bokking__box">
+                                                <div class="appoinment__box">
+                                                    <input style="color:black;" type="text" placeholder="Phone Number" required>
+                                                </div>
+                                                <div class="appoinment__box">
+                                                    <input style="color:black;" type="text" placeholder="Subject" required>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <!-- End Single -->
-                                        <!-- Start Single -->
-                                        <div class="single__bokking__box">
-                                            <div class="appoinment__box">
-                                                <input style="color:black;" type="text" placeholder="Phone Number" required>
+                                            <div class="single__bokking__box">
+                                                <div class="appoinment__box" style="width:100% !important;">
+                                                    <textarea style="color:black;" type="text" placeholder="Your Message" required></textarea>
+                                                </div>
                                             </div>
-                                            <div class="appoinment__box">
-                                                <input style="color:black;" type="text" placeholder="Subject" required>
+                                            <!-- End Single -->
+                                            <div class="appoinment__btn">
+                                                <button type="submit" class="btn btn-success">Submit</button>
                                             </div>
-                                        </div>
-                                        <div class="single__bokking__box">
-                                            <div class="appoinment__box" style="width:100% !important;">
-                                                <textarea style="color:black;" type="text" placeholder="Your Message" required></textarea>
-                                            </div>
-                                        </div>
-                                        <!-- End Single -->
-                                        <div class="appoinment__btn">
-                                            <a class="btn btn-success" href="#">Submit</a>
-                                        </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -246,7 +248,7 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                         <div class="section__title text-center">
-                            <h2 class="title__line">Ebony & Ivory Care Services </h2>
+                            <h2 class="title__line">Ebony & Ivory Care Services</h2>
                             <p>How can we help you today?</p>
                         </div>
                     </div>
@@ -367,7 +369,8 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                         <ul class="brand__list bg-white">
-                            <li><a href="#"><img src="<?php echo get_theme_file_uri('/images/cqc.jpg')?>" alt="brand images"></a></li>
+                            <li><a href="#"><img src="<?php echo get_theme_file_uri('/images/cqc.jpg')?>" class="partner-logo" alt="brand images"></a></li>
+                            <li><a href="#"><img src="<?php echo get_theme_file_uri('/images/hcpa.jpeg')?>" class="partner-logo" alt="brand images"></a></li>
                         </ul>
                     </div>
                 </div>
