@@ -1,5 +1,5 @@
 <?php echo get_header()?>
-<!-- End Header Style -->
+        <!-- End Header Style -->
         <!-- Start Bradcaump area -->
         <div class="ht__bradcaump__area bg--2" data--black__overlay="8">
             <div class="ht__bradcaump__wrap">
@@ -25,7 +25,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                        <div class="appoinment bg--5 ptb--70" data--black__overlay="8">
+                        <div class="appoinment bg--5 ptb--70" style="padding:5% 5% 5% 5%;" data--black__overlay="8">
                             <form action="#" method="POST">
                                 <div class="appoinment__inner">
                                     <h2 class="appoinment__title">Fill Up Appointment Form</h2>
@@ -61,7 +61,7 @@
                                     </div>
                                     <!-- End Single -->
                                     <div class="appoinment__btn">
-                                        <button class="bst__btn" name="sunmit_appointment">Appoinment</button>
+                                        <button class="bst__btn" style="color:black;" name="sunmit_appointment">Appoinment</button>
                                     </div>
                                 </div>
                             </form>

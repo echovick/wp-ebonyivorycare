@@ -258,7 +258,7 @@
                     <div class="blog__wrap cleatfix mt--70 xs__mb--30">
                         <!-- Start Single Blog Area -->
                         <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-                            <div class="blog" style="border:1px solid gray; padding:5% 5% 5% 5%;">
+                            <div class="blog" style="border:1px solid gray; padding:5% 5% 5% 5%; height:340px; width:auto;">
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
                                         <a href="<?php echo site_url('services')?>"><img src="<?php echo get_theme_file_uri('/images/blog/blog-img/1.jpg')?>" alt="blog images"></a>
@@ -279,7 +279,7 @@
                         <!-- End Single Blog Area -->
                         <!-- Start Single Blog Area -->
                         <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-                            <div class="blog" style="border:1px solid gray; padding:5% 5% 5% 5%;">
+                            <div class="blog" style="border:1px solid gray; padding:5% 5% 5% 5%; height:340px; width:auto;">
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
                                         <a href="#"><img src="<?php echo get_theme_file_uri('/images/WhatsApp Image 2021-06-29 at 12.20.58 PM.jpeg')?>" alt="blog images"></a>
@@ -300,7 +300,7 @@
                         <!-- End Single Blog Area -->
                         <!-- Start Single Blog Area -->
                         <div class="col-md-4 col-lg-4 hidden-sm col-xs-12">
-                            <div class="blog" style="border:1px solid gray; padding:5% 5% 5% 5%;">
+                            <div class="blog" style="border:1px solid gray; padding:5% 5% 5% 5%; height:340px; width:auto;">
                                 <div class="blog__inner">
                                     <div class="blog__thumb">
                                         <a href="<?php echo site_url('join-us')?>"><img src="<?php echo get_theme_file_uri('/images/blog/blog-img/2.jpg')?>" alt="blog images"></a>
