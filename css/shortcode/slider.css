@@ -18,7 +18,7 @@
   height: 100vh !important;
   width: 100%;
 }
-.slider__bg--1 {
+/* .slider__bg--1 {
   background-image: url("../../images/slider/bg/1.jpg");
 }
 @media screen and (max-width: 600px) {
@@ -40,7 +40,7 @@
 
 .slider__bg--4{
     background-image: url("../../images/cdc-Vqt9v7v6g44-unsplash.jpg");
-}
+} */
 
 .slider__bg--1, 
 .slider__bg--2, 

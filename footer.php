@@ -1,4 +1,7 @@
         <!-- Start Footer Area -->
+        <?php
+            $settings = get_page_by_title( 'Settings' );
+        ?>
         <footer id="footer__area" class="footer__area">
             <div class="footer-wrap pt--40 pb--70 ftr-bg bg__cat--1 smptb--60 xsptb--40">
                 <div class="container">
@@ -9,17 +12,31 @@
                                 <div class="single__footer__widget">
                                     <h2 class="footer-title">Contact Us</h2>
                                     <div class="footer__details">
+                                        <?php
+                                            $site_contact_information = $settings->site_contact_information;
+                                            $social_media_settings = $settings->social_media_settings;
+                                            $contact_address = $site_contact_information['contact_address'] ?? '';
+                                            $contact_email = $site_contact_information['contact_email'] ?? '';
+                                            $add_quick_links = $settings->add_quick_links;
+                                            $add_usefull_links = $settings->add_usefull_links;
+                                        ?>
                                         <!--Start Single Footer address -->
-                                        <div class="single__footer__address">
-                                            <div class="footer__icon">
-                                                <i class="zmdi zmdi-pin"></i>
+                                        <?php
+                                            if(is_array($contact_address)){
+                                            foreach($contact_address as $contact_address){
+                                        ?>
+                                            <div class="single__footer__address">
+                                                <div class="footer__icon">
+                                                    <i class="zmdi zmdi-pin"></i>
+                                                </div>
+                                                <div class="footer__address" style="color:white !important;">
+                                                    <?php echo $contact_address;?>
+                                                </div>
                                             </div>
-                                            <div class="footer__address">
-                                                <p>Unit 20, 4 Imperial Place Maxwell Road, Borehamwood,</p>
-                                                <p>Hertfordshire WD6 1JN</p>
-                                                <p>United Kingdom</p>
-                                            </div>
-                                        </div>
+                                        <?php
+                                                }
+                                            }
+                                        ?>
                                         <!--End Single Footer address -->
                                         <!--Start Single Footer address -->
                                         <div class="single__footer__address">
@@ -27,9 +44,17 @@
                                                 <i class="zmdi zmdi-email"></i>
                                             </div>
                                             <div class="footer__address">
-                                                <p><a href="mailto:enquiry@ebonyandivorycareservice.com" target="_top"
-                                                        style="font-size:14px;">enquiry@ebonyandivorycareservice.com</a>
-                                                </p>
+                                                <?php
+                                                    if(is_array($contact_email)){
+                                                        foreach($contact_email as $email){
+                                                ?>
+                                                    <p><a href="mailto:<?php echo $email?>" target="_top"
+                                                            style="font-size:14px;"><?php echo $email?></a>
+                                                    </p>
+                                                <?php
+                                                        }
+                                                    }
+                                                ?>
                                                 <!-- <p><a href="mailto:demo@gmail.com" target="_top">Demo@gmail.com</a></p> -->
                                             </div>
                                         </div>
@@ -40,8 +65,16 @@
                                                 <i class="zmdi zmdi-phone"></i>
                                             </div>
                                             <div class="footer__address">
-                                                <p><a href="tel:07985536432">07985536432</a></p>
-                                                <p><a href="tel:02082133147">020 8213 3147</a></p>
+                                                <?php
+                                                    $contact_phone = $site_contact_information['contact_phone'];
+                                                    if(is_array($contact_phone)){
+                                                        foreach($contact_phone as $phone){
+                                                ?>
+                                                    <p><a href="tel:<?php echo $phone?>"><?php echo $phone?></a></p>
+                                                <?php
+                                                        }
+                                                    }
+                                                ?>
                                             </div>
                                         </div>
                                         <!--End Single Footer address -->
@@ -54,12 +87,20 @@
                                 <div class="single__footer__widget our--links">
                                     <h2 class="footer-title">Quick links</h2>
                                     <ul class="footer-menu">
-                                        <li><a href="<?php echo site_url('/about')?>"><i
-                                                    class="zmdi zmdi-caret-right"></i>About Us</a></li>
-                                        <li><a href="<?php echo site_url('/services')?>"><i
-                                                    class="zmdi zmdi-caret-right"></i>Our Services</a></li>
-                                        <li><a href="<?php echo site_url('/join-us')?>"><i
-                                                    class="zmdi zmdi-caret-right"></i>Join Us</a></li>
+                                        <?php
+                                            if(is_array($add_quick_links)){
+                                                foreach($add_quick_links as $quick_links){
+                                                    if($quick_links['menu_source'] == 'Page'){
+                                                        $url = get_permalink($quick_links['page_quick_link']);
+                                                    }else if($quick_links['menu_source'] == 'Link'){
+                                                        $url = $quick_links['menu_url'];
+                                                    }
+                                        ?>
+                                            <li><a href="<?php echo $url?>"><i class="zmdi zmdi-caret-right"></i><?php echo $quick_links['menu_label']?></a></li>
+                                        <?php
+                                                }
+                                            }
+                                        ?>
                                     </ul>
                                 </div>
                             </div>
@@ -69,10 +110,20 @@
                                 <div class="single__footer__widget useful--links">
                                     <h2 class="footer-title">Useful Links</h2>
                                     <ul class="footer-menu">
-                                        <li><a href="#"><i class="zmdi zmdi-caret-right"></i>Sitemap</a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-caret-right"></i>Privacy Policy</a></li>
-                                        <li><a href="<?php echo site_url('terms')?>"><i
-                                                    class="zmdi zmdi-caret-right"></i>Terms of Services</a></li>
+                                        <?php
+                                            if(is_array($add_usefull_links)){
+                                                foreach($add_usefull_links as $useful_links){
+                                                    if($useful_links['useful_links_source'] == 'Page'){
+                                                        $url = get_permalink($useful_links['useful_link_page']);
+                                                    }else if($useful_links['useful_links_source'] == 'Link'){
+                                                        $url = $useful_links['usefull_link_url'];
+                                                    }
+                                        ?>
+                                            <li><a href="<?php echo $url?>"><i class="zmdi zmdi-caret-right"></i><?php echo $useful_links['useful_link_label']?></a></li>
+                                        <?php
+                                                }
+                                            }
+                                        ?>
                                     </ul>
                                 </div>
                             </div>
@@ -128,16 +179,20 @@
                                         Reserved.</p>
                                 </div>
                                 <ul class="ft__btm__social__icon">
-                                    <li><a href="https://dribbble.com/devitemsllc"><i
-                                                class="zmdi zmdi-dribbble"></i></a></li>
-                                    <li><a href="https://www.pinterest.com/devitemsllc/"><i
-                                                class="zmdi zmdi-pinterest"></i></a></li>
-                                    <li><a href="https://twitter.com/devitemsllc"><i class="zmdi zmdi-twitter"></i></a>
-                                    </li>
-                                    <li><a href="https://www.instagram.com/devitems/"><i
-                                                class="zmdi zmdi-instagram"></i></a></li>
-                                    <li><a href="https://www.facebook.com/devitems/?ref=bookmarks"><i
-                                                class="zmdi zmdi-facebook"></i></a></li>
+                                    <?php
+                                        if(!empty($social_media_settings['facebook'])){
+                                            echo '<li><a href="'.$social_media_settings['facebook'].'"><i class="zmdi zmdi-facebook"></i></a></li>';
+                                        }
+                                        if(!empty($social_media_settings['twitter'])){
+                                            echo '<li><a href="'.$social_media_settings['twitter'].'"><i class="zmdi zmdi-twitter"></i></a></li>';
+                                        }
+                                        if(!empty($social_media_settings['instagram'])){
+                                            echo '<li><a href="'.$social_media_settings['instagram'].'"><i class="zmdi zmdi-instagram"></i></a></li>';
+                                        }
+                                        if(!empty($social_media_settings['pinterest'])){
+                                            echo '<li><a href="'.$social_media_settings['pinterest'].'"><i class="zmdi zmdi-pinterest"></i></a></li>';
+                                        }
+                                    ?>
                                 </ul>
                             </div>
                         </div>

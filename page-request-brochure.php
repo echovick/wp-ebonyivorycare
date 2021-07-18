@@ -58,9 +58,15 @@
                                         <textarea name="message"  placeholder="Message text"></textarea>
                                     </div>
                                 </div>
+                                <?php
+                                    $upload_brochure = rwmb_meta('upload_brochure');
+                                    foreach($upload_brochure as $brochure){
+                                        $url = $brochure['url'];
+                                    }
+                                ?>
                                 <div class="contact-btn">
                                     <button type="submit" class="bst__btn btn--theme__color" style="margin-right:5%;">Request Physical Brochure</button>
-                                    <button type="submit" class="bst__btn btn--theme__color">Download Digital Brochure</button>
+                                    <a href="<?php echo $url?>" target="_blank" class="bst__btn btn--theme__color" download>Download Digital Brochure</a>
                                 </div>
                             </form>
                         </div>

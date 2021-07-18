@@ -1,4 +1,13 @@
 <?php get_header()?>
+        <?php
+            while(have_posts()):the_post();
+                $slider_section = rwmb_meta('slider_section');
+                $featured_highlight_boxes = rwmb_meta('featured_highlight_boxes');
+                $about_summary_section = rwmb_meta('about_summary_section');
+                $services_section = rwmb_meta('services_section');
+                $expert_quotes_section = rwmb_meta('expert_quotes_section');
+            endwhile;
+        ?>
         <style>
             @media only screen and (max-width: 600px) {
                 .service__icon{
@@ -28,58 +37,42 @@
         </style>
         <!-- Start Slider Area -->
         <div class="slider__container slider__full--width">
+            
             <div class="slider__activation__wrap slider-activetion-wrap control__style--left owl-carousel owl-theme">
                 <!-- Start Single Slide -->
-                <div class="slide slider__bg--1" data--black__overlay="2">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
-                                <div class="slider__inner">
-                                    <h1>welcome <br> to Ebony and Ivory Care Services</h1>
-                                    <p>We are committed to providing person-centred, quality and compassionate care to vulnerable adults and children who require care in their own homes.</p>
-                                    <div class="slider__btn">
-                                        <a class="bst__btn" href="<?php echo site_url('services')?>">our care services</a>
+                <?php
+                    if(is_array($slider_section)){
+                        $count = 0;
+                        foreach($slider_section as $slider){
+                            $count++;
+                            $slider_image = get_metabox_group_image_url($slider,'slider_image');
+                ?>
+                    <div class="slide" style="background-image: url('<?php echo $slider_image?>');" data--black__overlay="2">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+                                    <div class="slider__inner">
+                                        <h1><?php echo $slider['slider_title']?></h1>
+                                        <p><?php echo $slider['slider_snippet']?></p>
+                                        <div class="slider__btn">
+                                            <?php
+                                                if($slider['redirect_destination'] == "Existing Page"){
+                                                    $url = get_permalink($slider['select_page']);
+                                                }else if($slider['redirect_destination'] == "External Link"){
+                                                    $url = $slider['redirect_url'];
+                                                }
+                                            ?>
+                                            <a class="bst__btn" href="<?php echo $url?>"><?php echo $slider['slider_button_label']?></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- End Single Slide -->
-                <!-- Start Single Slide -->
-                <div class="slide slider__bg--4 text__align--center" data--black__overlay="2">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
-                                <div class="slider__inner">
-                                    <h1>welcome <br> to Ebony and Ivory Care Services</h1>
-                                    <p>We are a trusted care provider for vulnerable children</p>
-                                    <div class="slider__btn">
-                                        <a class="bst__btn" href="<?php echo site_url('services')?>">our care services</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Slide -->
-                <!-- Start Single Slide -->
-                <div class="slide slider__bg--2 text__align--right" data--black__overlay="2">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
-                                <div class="slider__inner">
-                                    <h1>welcome <br> to Ebony and Ivory Care Services</h1>
-                                    <p>Excellence in service delivery and a culture of mutual respect are amongst our core values in giving care to those that need it</p>
-                                    <div class="slider__btn">
-                                        <a class="bst__btn" href="<?php echo site_url('services')?>">our care services</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Slide -->
+                <?php
+                        }
+                    }
+                ?>
             </div>
         </div>
         <!-- End Slider Area -->
@@ -87,58 +80,26 @@
         <section class="our__service pb--100 pt--90 bg-white">
             <div class="container">
                 <div class="row htc__service">
-                    <!-- Start Single Service -->
-                    <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
-                        <div class="service bg-white text-center shadow-1" style="border:1px solid grey; border-radius:6px;">
-                            <div class="service__inner">
-                                <div class="service__icon">
-                                    <img src="<?php echo get_theme_file_uri('/images/service/shape/1.png')?>" alt="icon images"> 
+                    <?php
+                        $count = 0;
+                        foreach($featured_highlight_boxes as $boxes){
+                            $count++;
+                    ?>
+                        <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
+                            <div class="service bg-white text-center shadow-1" style="border:1px solid grey; border-radius:6px;">
+                                <div class="service__inner">
+                                    <div class="service__icon">
+                                        <img src="<?php echo get_theme_file_uri('/images/service/shape/'.$count.'.png')?>" alt="icon images"> 
+                                    </div>
+                                    <h2 class="service-text"><a href="#"><?php echo $boxes?></a></h2>
+                                    <!-- <p>Lorem ipsum dolor sitbn  ipisicelit sed do eiusmod</p> -->
                                 </div>
-                                <h2 class="service-text"><a href="#">Hourly Care</a></h2>
-                                <!-- <p>Lorem ipsum dolor sitbn  ipisicelit sed do eiusmod</p> -->
                             </div>
                         </div>
-                    </div>
-                    <!-- End Single Service -->
+                    <?php
+                        }
+                    ?>
                     <!-- Start Single Service -->
-                    <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
-                        <div class="service bg-white text-center shadow-1" style="border:1px solid grey; border-radius:6px;">
-                            <div class="service__inner">
-                                <div class="service__icon">
-                                    <img src="<?php echo get_theme_file_uri('/images/service/shape/2.png')?>" alt="icon images"> 
-                                </div>
-                                <h2 class="service-text"><a href="#">Live-in Care</a></h2>
-                                <!-- <p>Lorem ipsum dolor sitbn  ipisicelit sed do eiusmod</p> -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Service -->
-                    <!-- Start Single Service -->
-                    <div class="col-md-3 col-lg-3 col-sm-6 col-xs-6">
-                        <div class="service bg-white text-center shadow-1" style="border:1px solid grey; border-radius:6px;">
-                            <div class="service__inner">
-                                <div class="service__icon">
-                                    <img src="<?php echo get_theme_file_uri('/images/service/shape/3.png')?>" alt="icon images"> 
-                                </div>
-                                <h2 class="service-text"><a href="#">Respite care</a></h2>
-                                <!-- <p>Lorem ipsum dolor sitbn  ipisicelit sed do eiusmod</p> -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Service -->
-                    <!-- Start Single Service -->
-                    <div class="col-md-3 col-lg-3 hidden-sm col-xs-6">
-                        <div class="service bg-white text-center shadow-1" style="border:1px solid grey; border-radius:6px;">
-                            <div class="service__inner">
-                                <div class="service__icon">
-                                    <img src="<?php echo get_theme_file_uri('/images/service/shape/4.png')?>" alt="icon images"> 
-                                </div>
-                                <h2 class="service-text"><a href="#">Companionship</a></h2>
-                                <!-- <p>Lorem ipsum dolor sitbn  ipisicelit sed do eiusmod</p> -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Service -->
                 </div>
             </div>
         </section>
@@ -150,9 +111,9 @@
                     <div class="best__care__wrap clearfix">
                         <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12 col-xs-12">
                             <div class="best__care__inner">
-                                <h2><a href="#"> We Provide <br> The Best Care Support</a></h2>
+                                <h2><a href="#"> <?php echo $about_summary_section['summary_section_title']?></a></h2>
                                 <div class="best__care__details">
-                                    <p>We are committed to <b>providing highest quality and compassionate care </b> to our service users in the comfort of their own home. We support our clients with all aspects of day to day living to achieve the best possible quality of life. Our services are flexible and responsive to individual unique needs of our service users as we literally put them in charge of their choices. </p>
+                                    <p><?php echo $about_summary_section['summary_section_content']?></p>
                                 </div>
                             </div>
                         </div>
@@ -162,7 +123,7 @@
                                     <!-- <a class="video__trigger video-popup" href="https://www.youtube.com/watch?v=cDDWvj_q-o8">
                                         <i class="zmdi zmdi-play"></i>
                                     </a> -->
-                                    <img src="<?php echo get_theme_file_uri('/images/WhatsApp Image 2021-06-29 at 11.56.54 AM.jpeg')?>" alt="">
+                                    <img src="<?php echo get_metabox_group_image_url($about_summary_section,'summary_section_image')?>" alt="">
                                 </div>
                             </div>
                         </div>
@@ -170,10 +131,10 @@
                 </div>
                 <div class="row best-care-mobile">
                     <div class="best__care__inner col-md-12">
-                        <h2><a href="#"> We provide <br> The Best Care Support</a></h2>
-                        <img src="<?php echo get_theme_file_uri('/images/matheus-ferrero-yfmjALh1S6s-unsplash.jpg')?>" alt="" style="margin-bottom:5%;">
+                        <h2><a href="#"> <?php echo $about_summary_section['summary_section_title']?></h2>
+                        <img src="<?php echo get_metabox_group_image_url($about_summary_section,'summary_section_image')?>" alt="" style="margin-bottom:5%;">
                         <div class="best__care__details">
-                            <p>We are committed to <b>providing highest quality and compassionate care </b> to our service users in the comfort of their own home. We support our clients with all aspects of day to day living to achieve the best possible quality of life. Our services are flexible and responsive to individual unique needs of our service users as we literally put them in charge of their choices. </p>
+                            <p><?php echo $about_summary_section['summary_section_content']?></p>
                         </div>
                     </div>
                 </div>
@@ -248,8 +209,8 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                         <div class="section__title text-center">
-                            <h2 class="title__line">Ebony & Ivory Care Services</h2>
-                            <p>How can we help you today?</p>
+                            <h2 class="title__line"><?php echo $services_section['services_section_title']?></h2>
+                            <p><?php echo $services_section['services_section_snippet']?></p>
                         </div>
                     </div>
                 </div>
@@ -257,106 +218,60 @@
                 <div class="row">
                     <div class="blog__wrap cleatfix mt--70 xs__mb--30">
                         <!-- Start Single Blog Area -->
-                        <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-                            <div class="blog" style="border:1px solid gray; padding:5% 5% 5% 5%; height:340px; width:auto;">
-                                <div class="blog__inner">
-                                    <div class="blog__thumb">
-                                        <a href="<?php echo site_url('services')?>"><img src="<?php echo get_theme_file_uri('/images/blog/blog-img/1.jpg')?>" alt="blog images"></a>
-                                    </div>
-                                    <!-- Start Blog Hover -->
-                                    <div class="blog__hover__info">
-                                        <div class="blog__hover__inner">
-                                            <a href="<?php echo site_url('services')?>"><i class="zmdi zmdi-link"></i></a>
+                        <?php
+                            $add_service_box = $services_section['add_service_box'] ?? '';
+                            foreach($add_service_box as $service_box){
+                        ?>
+                            <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+                                <div class="blog" style="border:1px solid gray; padding:5% 5% 5% 5%; height:340px; width:auto;">
+                                    <div class="blog__inner">
+                                        <div class="blog__thumb">
+                                            <a href="<?php echo site_url('services')?>"><img src="<?php echo get_metabox_group_image_url($service_box,'service_image')?>" alt="blog images"></a>
                                         </div>
-                                    </div>
-                                    <!-- End Blog Hover -->
-                                </div>
-                                <div class="blog__details text-center">
-                                    <h4><a href="<?php echo site_url('services')?>">looking for Care </a></h4>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Blog Area -->
-                        <!-- Start Single Blog Area -->
-                        <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
-                            <div class="blog" style="border:1px solid gray; padding:5% 5% 5% 5%; height:340px; width:auto;">
-                                <div class="blog__inner">
-                                    <div class="blog__thumb">
-                                        <a href="#"><img src="<?php echo get_theme_file_uri('/images/WhatsApp Image 2021-06-29 at 12.20.58 PM.jpeg')?>" alt="blog images"></a>
-                                    </div>
-                                    <!-- Start Blog Hover -->
-                                    <div class="blog__hover__info">
-                                        <div class="blog__hover__inner">
-                                            <a href="#"><i class="zmdi zmdi-link"></i></a>
+                                        <!-- Start Blog Hover -->
+                                        <div class="blog__hover__info">
+                                            <div class="blog__hover__inner">
+                                                <a href="<?php echo site_url('services')?>"><i class="zmdi zmdi-link"></i></a>
+                                            </div>
                                         </div>
+                                        <!-- End Blog Hover -->
                                     </div>
-                                    <!-- End Blog Hover -->
-                                </div>
-                                <div class="blog__details text-center">
-                                    <h4><a href="<?php echo site_url('request-brochure')?>">Request A Brochure </a></h4>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Blog Area -->
-                        <!-- Start Single Blog Area -->
-                        <div class="col-md-4 col-lg-4 hidden-sm col-xs-12">
-                            <div class="blog" style="border:1px solid gray; padding:5% 5% 5% 5%; height:340px; width:auto;">
-                                <div class="blog__inner">
-                                    <div class="blog__thumb">
-                                        <a href="<?php echo site_url('join-us')?>"><img src="<?php echo get_theme_file_uri('/images/blog/blog-img/2.jpg')?>" alt="blog images"></a>
+                                    <div class="blog__details text-center">
+                                        <h4><a href="<?php echo site_url('services')?>"><?php echo $service_box['service_title']?> </a></h4>
                                     </div>
-                                    <!-- Start Blog Hover -->
-                                    <div class="blog__hover__info">
-                                        <div class="blog__hover__inner">
-                                            <a href="<?php echo site_url('join-us')?>"><i class="zmdi zmdi-link"></i></a>
-                                        </div>
-                                    </div>
-                                    <!-- End Blog Hover -->
                                 </div>
-                                <div class="blog__details text-center">
-                                    <h4><a href="<?php echo site_url('join-us')?>">Looking for Work</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Single Blog Area -->
+                            </div>    
+                        <?php
+                            }
+                        ?>
                     </div>
                 </div>                
             </div>
         </section>
         <!-- End Blog Area -->
         <!-- Start Testimonial Area -->
-        <section class="our__testimonial ptb--100 bg--1" data--black__overlay="8">
+        <section class="our__testimonial ptb--100" style="background:url('<?php echo get_metabox_group_image_url($expert_quotes_section,'section_image')?>') no-repeat scroll center center / cover ;" data--black__overlay="8">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-lg-8 col-lg-offset-2 col-md-offset-2 col-sm-12 col-xs-12">
                         <div class="testimonial__activation" data-flickity='{ "wrapAround": true, "autoPlay": true }'>
                             <!-- Start Single Testimonial -->
-                            <div class="testimonial" style="width:100%;">
-                                <div class="testimonial__inner text-center">
-                                    <p>"The simple act of caring is heroic"</p>
-                                    <h4><a href="#">Edward Albert</a></h4>
-                                    <h6>actor</h6>
+                            <?php
+                                $add_quote = $expert_quotes_section['add_quote'] ?? '';
+                                if(is_array($add_quote)){
+                                    foreach($add_quote as $quote){
+                            ?>
+                                <div class="testimonial" style="width:100%;">
+                                    <div class="testimonial__inner text-center">
+                                        <p>"<?php echo $quote['quote']?>"</p>
+                                        <h4><a href="#"><?php echo $quote['person_name']?></a></h4>
+                                        <h6><?php echo $quote['person_title']?></h6>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- End Single Testimonial -->
-                            <!-- Start Single Testimonial -->
-                            <div class="testimonial" style="width:100%;">
-                                <div class="testimonial__inner text-center">
-                                    <p>"One person caring about another represents life’s greatest value"</p>
-                                    <h4><a href="#">Jim Rohn</a></h4>
-                                    <h6>author</h6>
-                                </div>
-                            </div>
-                            <!-- End Single Testimonial -->
-                            <!-- Start Single Testimonial -->
-                            <div class="testimonial" style="width:100%;">
-                                <div class="testimonial__inner text-center">
-                                    <p>"To care for those who once cared for us is one of the highest honours"</p>
-                                    <h4><a href="#">Tia Walker</a></h4>
-                                    <h6>author</h6>
-                                </div>
-                            </div>
-                            <!-- End Single Testimonial -->
+                            <?php
+                                    }
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -369,8 +284,19 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                         <ul class="brand__list bg-white">
-                            <li><a href="#"><img src="<?php echo get_theme_file_uri('/images/cqc.jpg')?>" class="partner-logo" alt="brand images"></a></li>
-                            <li><a href="#"><img src="<?php echo get_theme_file_uri('/images/hcpa.jpeg')?>" class="partner-logo" alt="brand images"></a></li>
+                            <?php
+                                $partners = new WP_Query(
+                                    array(
+                                        'post_type' => 'partner',
+                                        'posts_per_page' => -1,
+                                    )
+                                );
+                                while($partners->have_posts()):$partners->the_post();
+                            ?>
+                                <li><a href="#"><img src="<?php echo get_metabox_image_url('partner_logo')?>" class="partner-logo" alt="brand images"></a></li>
+                            <?php
+                                endwhile;
+                            ?>
                         </ul>
                     </div>
                 </div>

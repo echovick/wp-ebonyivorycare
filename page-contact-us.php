@@ -53,25 +53,38 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                         <div class="section__title text-center">
-                            <h2 class="title__line">Get In Touch</h2>
-                            <p>Do you have a question for us? We will be delighted to hear from you.</p>
+                            <h2 class="title__line"><?php echo rwmb_meta('page_title')?></h2>
+                            <p><?php echo rwmb_meta('page_description')?></p>
                         </div>
                     </div>
                 </div>
                 <!-- End Section Title -->
+                <?php
+                    $settings = get_page_by_title( 'Settings' );
+                    $site_contact_information = $settings->site_contact_information;
+                    $contact_address = $site_contact_information['contact_address'] ?? '';
+                    $contact_email = $site_contact_information['contact_email'] ?? '';
+                ?>
                 <div class="row">
                     <div class="ct__address__wrap mt--70 xs__mt--40">
                         <!-- Start Single Address -->
                         <div class="col-md-4 col-lg-4 col-sm-6">
+                            <?php
+                                if(is_array($contact_address)){
+                                foreach($contact_address as $contact_address){
+                            ?>
                             <div class="bg--gray grey-boxes">
                                 <div class="ct__icon">
                                     <i class="zmdi zmdi-pin"></i>
                                 </div>
                                 <div class="ct__address__content">
-                                    <p>Unit 20, 4 Imperial Place Maxwell Road, Borehamwood, Hertfordshire</p>
-                                    <p>WD6 1JN, United Kingdom</p>
+                                    <?php echo $contact_address;?>
                                 </div>
                             </div>
+                            <?php
+                                    }
+                                }
+                            ?>
                         </div>
                         <!-- End Single Address -->
                         <!-- Start Single Address -->
@@ -81,7 +94,15 @@
                                     <i class="zmdi zmdi-email"></i>
                                 </div>
                                 <div class="ct__address__content">
-                                    <a href="mailto:www.enquiry@ebonyandivorycareservice.com">enquiry@ebonyandivorycareservice.com</a>
+                                    <?php   
+                                        if(is_array($contact_email)){
+                                            foreach($contact_email as $email){
+                                    ?>
+                                    <a href="mailto:<?php echo $email?>"><?php echo $email?></a>
+                                    <?php
+                                            }
+                                        }
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -93,8 +114,16 @@
                                     <i class="zmdi zmdi-phone"></i>
                                 </div>
                                 <div class="ct__address__content">
-                                    <p><a href="tel:07985536432">07985536432</a></p>
-                                    <p><a href="tel:02082133147">020 8213 3147</a></p>
+                                    <?php
+                                        $contact_phone = $site_contact_information['contact_phone'];
+                                        if(is_array($contact_phone)){
+                                            foreach($contact_phone as $phone){
+                                    ?>
+                                        <p><a href="tel:<?php echo $phone?>"><?php echo $phone?></a></p>
+                                    <?php
+                                            }
+                                        }
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -147,13 +176,24 @@
          </div> -->
         <!-- End Map Area -->
         <!-- Start Brand Area -->
-        <div class="brand__area pb--100 bg-white">
+        <div class="brand__area ptb--100 bg-white">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                         <ul class="brand__list bg-white">
-                            <li><a href="#"><img src="<?php echo get_theme_file_uri('/images/cqc.jpg')?>" class="partner-logo" alt="brand images"></a></li>
-                            <li><a href="#"><img src="<?php echo get_theme_file_uri('/images/hcpa.jpeg')?>" class="partner-logo" alt="brand images"></a></li>
+                            <?php
+                                $partners = new WP_Query(
+                                    array(
+                                        'post_type' => 'partner',
+                                        'posts_per_page' => -1,
+                                    )
+                                );
+                                while($partners->have_posts()):$partners->the_post();
+                            ?>
+                                <li><a href="#"><img src="<?php echo get_metabox_image_url('partner_logo')?>" class="partner-logo" alt="brand images"></a></li>
+                            <?php
+                                endwhile;
+                            ?>
                         </ul>
                     </div>
                 </div>
